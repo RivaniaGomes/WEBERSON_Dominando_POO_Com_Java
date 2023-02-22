@@ -2,8 +2,6 @@ package br.com.bank.model;
 
 import java.util.InputMismatchException;
 
-import br.com.bank.var;
-
 public class ContaBancaria {
 	private String agencia;
 	private String conta;
