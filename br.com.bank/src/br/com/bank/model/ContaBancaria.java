@@ -1,12 +1,15 @@
 package br.com.bank.model;
 
+import java.util.Date;
 import java.util.InputMismatchException;
 
-public class ContaBancaria {
+//utiliza o abstract para que não possa ser estanciada, pois funciona como um modelo para a conta poupança ou para a conta corrente
+public abstract class ContaBancaria {
 	private String agencia;
 	private String conta;
 	private Integer digito;
 	private Double saldo;
+	private Date dataAbertura;
 	private Double VALOR_MINIMO_DEPOSITO = 10.0;
 
 	public ContaBancaria(String agencia, String conta, Integer digito, Double saldoInicial) {
@@ -15,6 +18,7 @@ public class ContaBancaria {
 		this.conta = conta;
 		this.digito = digito;
 		this.saldo = saldoInicial;
+		this.dataAbertura = new Date();
 	}
 
 	public String getAgencia() {
@@ -45,6 +49,10 @@ public class ContaBancaria {
 		return saldo;
 	}
 
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+	
 	public void depositar(Double valor) {
 		if (valor < VALOR_MINIMO_DEPOSITO) {
 			throw new InputMismatchException("O valor mínimo de depósito é R$ " + VALOR_MINIMO_DEPOSITO);
@@ -67,4 +75,6 @@ public class ContaBancaria {
 		// Efetua o deposito na conta de destino
 		contaDestino.depositar(valor);
 	}
+
+	
 }
