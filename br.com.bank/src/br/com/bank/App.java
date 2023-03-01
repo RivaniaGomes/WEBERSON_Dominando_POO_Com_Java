@@ -2,6 +2,7 @@ package br.com.bank;
 
 import br.com.bank.model.ContaCorrente;
 import br.com.bank.model.ContaPoupanca;
+import br.com.bank.model.Movimentacao;
 import br.com.bank.utils.DataUtil;
 
 public class App {
@@ -39,6 +40,13 @@ public class App {
 		System.out.println(formatado1);
 		System.out.println(formatado2);
 		System.out.println(formatado3);
+		
+		//Extrato bancario
+		Movimentacao movimentacao = new Movimentacao("Saque", 100.0);
+		
+		System.out.println(movimentacao);
+		
+		movimentacao.toString();
 	}
 
 }
