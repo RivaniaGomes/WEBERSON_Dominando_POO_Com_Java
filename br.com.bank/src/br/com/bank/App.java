@@ -2,6 +2,7 @@ package br.com.bank;
 
 import br.com.bank.model.ContaCorrente;
 import br.com.bank.model.ContaPoupanca;
+import br.com.bank.utils.DataUtil;
 
 public class App {
 
@@ -30,6 +31,14 @@ public class App {
 		
 		System.out.println("O saldo atual é de R$ " + conta.getSaldo());
 		System.out.println();
+		
+		//quando o metodo é static posso chamar ele sem estanciar um objeto, geralmente usado nos metodos de conversao
+		var formatado1 = DataUtil.converterDateParaDataEHora(conta2.getDataAbertura());
+		var formatado2 = DataUtil.converterDateParaData(conta2.getDataAbertura());
+		var formatado3 = DataUtil.converterDateParaHora(conta2.getDataAbertura());
+		System.out.println(formatado1);
+		System.out.println(formatado2);
+		System.out.println(formatado3);
 	}
 
 }
