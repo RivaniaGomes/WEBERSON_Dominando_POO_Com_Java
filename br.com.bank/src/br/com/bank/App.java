@@ -42,11 +42,8 @@ public class App {
 		System.out.println(formatado3);
 		
 		//Extrato bancario
-		Movimentacao movimentacao = new Movimentacao("Saque", 100.0);
-		
-		System.out.println(movimentacao);
-		
-		movimentacao.toString();
+		conta.imprimirExtrato();
+		conta2.imprimirExtrato();
 	}
 
 }
